@@ -1,0 +1,28 @@
+$gutter: 24px;
+
+.container {
+  margin: 0 auto;
+  min-width: 348px;
+  max-width: 92.8%;
+}
+
+.container-fluid {
+  padding: 0 15px;
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 4 {
+  $gutter-totalWidth: $gutter * ($i - 1);
+
+  .col-sm-#{$i} {
+    width: calc((100% - $gutter-totalWidth) / 4 * $i + $gutter-totalWidth);
+  }
+}
+
+@media screen and (min-width: 768px) {
+}

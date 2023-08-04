@@ -1,0 +1,40 @@
+nav {
+  position: relative;
+  background-color: $primary;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  height: 80px;
+
+  img {
+    max-width: 80px;
+  }
+}
+
+.nav-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 -15px;
+  width: 100vw;
+
+  li {
+    @include flex-center;
+
+    padding: 12px 0;
+    width: 50%;
+
+    border: 1px solid white;
+  }
+
+  a {
+    width: 100%;
+
+    color: white;
+    text-align: center;
+    line-height: normal;
+  }
+}
