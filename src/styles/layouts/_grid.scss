@@ -1,9 +1,11 @@
 $gutter: 24px;
 
+// 本網格從 mobile 為初版開始設計
+// 容器最大寬度減掉設計稿指定左右寬距 13px*2
 .container {
   margin: 0 auto;
   min-width: 348px;
-  max-width: 92.8%;
+  max-width: calc(100% - 26px);
 }
 
 .container-fluid {
@@ -20,9 +22,41 @@ $gutter: 24px;
   $gutter-totalWidth: $gutter * ($i - 1);
 
   .col-sm-#{$i} {
-    width: calc((100% - $gutter-totalWidth) / 4 * $i + $gutter-totalWidth);
+    width: calc((100% - $gutter*3) / 4 * $i + $gutter-totalWidth);
   }
 }
 
-@media screen and (min-width: 768px) {
+// 設定寬度到達 768px 開始為平板樣式
+@media (min-width: 768px) {
+  .container {
+    min-width: 376px;
+    max-width: calc(100% - 72px);
+  }
+
+  @for $i from 1 through 12 {
+    $gutter-totalWidth: $gutter * ($i - 1);
+  
+    .col-md-#{$i} {
+      width: calc((100% - $gutter*11) / 12 * $i + $gutter-totalWidth);
+    }
+  }
 }
+
+// 電腦樣式
+@media (min-width: 1200px) {
+  .container {
+    min-width: 769px;
+    max-width: 1296px;
+    width: 95%;
+  }
+
+  @for $i from 1 through 12 {
+    $gutter-totalWidth: $gutter * ($i - 1);
+  
+    .col-lg-#{$i} {
+      width: calc((100% - $gutter*11) / 12 * $i + $gutter-totalWidth);
+    }
+  }
+}
+
+

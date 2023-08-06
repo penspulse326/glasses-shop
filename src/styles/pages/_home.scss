@@ -1,3 +1,4 @@
+// homepage global styles
 .root-homepage {
   section {
     padding: 40px 0;
@@ -7,24 +8,82 @@
     margin: 0 auto;
 
     color: $dark;
+    @include h4;
+  }
+
+  @include pad {
+    section {
+      padding: 80px 0;
+    }
+
+    h2 {
+      @include h2;
+    }
   }
 }
 
 p {
+  color: black;
   font-weight: 400;
+}
+
+// header
+.homepage-header {
+  padding: 144px 0;
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/home-header-sm.png");
+  background-size: cover;
+  background-position: center;
+
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  @include pad {
+    padding: 296px 0;
+  }
+
+  @include desktop {
+    background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/home-header.png");
+  }
+}
+
+.homepage-header-title {
+  margin-bottom: 8px;
+
+  color: $dark;
+  text-align: right;
+
+  h2 {
+    @include h4;
+  }
+
+  @include pad {
+    margin-bottom: 4px;
+
+    h2 {
+      @include h1;
+    }
+    h3 {
+      @include h3;
+      font-weight: 400;
+    }
+  }
 }
 
 // introduction section
 .intro {
   background-color: $secondary;
   color: $dark;
-
-  p {
-    color: black;
-  }
 }
 
 .intro-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
   img {
     width: 100px;
   }
@@ -37,7 +96,7 @@ p {
   h3 {
     margin-top: 1rem;
 
-    font-size: 24px;
+    @include h4;
   }
   p {
     margin-top: 0.5rem;
@@ -47,21 +106,47 @@ p {
 // category section
 .category {
   text-align: center;
-}
 
-.category-list {
+  .row {
+    flex-direction: column;
+  }
+
+  ul {
+    margin: 0 auto;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
   li {
     margin-top: 24px;
-  }
-}
+    margin-left: auto;
+    margin-right: auto;
 
-.category-name {
-  @include roboto-title;
+    @include desktop {
+      margin-top: 48px;
+    }
+  }
+
+  img {
+    display: block;
+  }
+
+  h3 {
+    @include roboto-title;
+  }
+
+  @include pad {
+    li:first-child {
+      margin-top: 48px;
+    }
+  }
 }
 
 // collaboration section
 .co-branding {
-  background-image: url("../../src/images/index-bg-sm.png");
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/index-bg-sm.png");
   background-size: cover;
   background-position: center;
 
@@ -74,22 +159,42 @@ p {
   li {
     margin-top: 24px;
   }
-
-  a {
-    display: block;
-  }
-
+  a,
   img {
     display: block;
   }
-
-  h2 {
+  h3 {
     width: 100%;
 
     background-color: white;
 
     text-align: center;
     @include roboto-title;
+  }
+
+  @include pad {
+    li:first-child {
+      margin-top: 48px;
+    }
+    img {
+      width: 100%;
+      height: 240px;
+
+      object-fit: cover;
+    }
+  }
+
+  @include desktop {
+    display: flex;
+
+    li {
+      margin-top: 48px;
+      width: 50%;
+    }
+
+    h3 {
+      padding: 8px 0;
+    }
   }
 }
 
@@ -103,6 +208,13 @@ p {
 }
 
 .comment-list {
+  @include pad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   li {
     margin-top: 16px;
 
@@ -110,8 +222,23 @@ p {
     box-shadow: 0px 2px 6px #00000029;
 
     overflow: hidden;
-  }
 
+    @include pad {
+      margin-top: 24px;
+    }
+
+    @include desktop {
+      margin-top: 48px;
+    }
+  }
+  img {
+    display: block;
+
+    width: 100%;
+    height: 306px;
+
+    object-fit: cover;
+  }
   .comment-info {
     display: flex;
     flex-direction: column;
@@ -125,20 +252,9 @@ p {
       font-weight: 500;
     }
   }
-
-  img {
-    display: block;
-
-    width: 100%;
-    height: 306px;
-
-    object-fit: cover;
-  }
-
   p {
     margin-top: 0.5rem;
   }
-
   .comment-date {
     display: block;
 
@@ -153,11 +269,27 @@ p {
 
   p {
     margin-top: 24px;
+
+    @include desktop {
+      margin-top: 48px;
+     }
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 .response-form {
   margin-top: 24px;
+
+  ul {
+    @include pad {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
   li {
     display: flex;
@@ -179,14 +311,13 @@ p {
     flex-direction: row;
     align-items: flex-start;
 
+    div {
+      padding: 2px;
+    }
     input {
       margin: 0;
-      padding: 0;
-      width: 20px;
-      height: 20px;
-
-      background-color: transparent;
-      border: none;
+      width: 16px;
+      height: 16px;
     }
 
     span {
@@ -205,6 +336,13 @@ p {
   }
 
   .btn {
+    display: block;
     margin-top: 24px;
+
+    @include pad {
+      margin-top: 48px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

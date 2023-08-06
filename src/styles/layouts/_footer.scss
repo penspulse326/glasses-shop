@@ -9,6 +9,41 @@ footer {
     border: none;
 
     border-top: 1px solid white;
+
+    @include pad {
+      margin: 32px 0;
+    }
+  }
+
+  @include pad {
+    padding: 40px 0;
+  }
+}
+
+.footer-menu {
+  display: none;
+
+  a {
+    display: block;
+
+    width: 100%;
+
+    color: white;
+  }
+
+  @include pad {
+    display: flex;
+
+    margin-top: 16px;
+    margin-bottom: 32px;
+
+    li {
+      margin-right: 48px;
+    }
+
+    li:nth-last-child(1) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -24,6 +59,12 @@ footer {
     height: 24px;
 
     fill: white;
+
+    @include pad {
+      margin-right: 16px;
+      width: 48px;
+      height: 48px;
+    }
   }
 
   li {
@@ -36,20 +77,38 @@ footer {
   li:nth-last-child(1) {
     margin-top: 8px;
   }
+
+  span {
+    @include pad {
+      @include h3;
+      font-family: "Noto Sans TC", sans-serif;
+      font-weight: 400;
+    }
+  }
 }
 
 .contact-sns {
   display: flex;
 
-  img {
-    width: 24px;
-    height: 24px;
-  }
-
   li {
     margin-left: 8px;
 
     font-weight: 400;
+
+    @include pad {
+      margin-top: 8px;
+      margin-left: 16px;
+    }
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+
+    @include pad {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
@@ -57,9 +116,28 @@ footer {
   display: flex;
   flex-direction: column;
 
-  div {
+  @include pad {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  ul {
     display: flex;
     flex-direction: column;
+
+    @include pad {
+      flex-direction: row;
+    }
+  }
+
+  li {
+    @include pad {
+      font-size: 14px;
+
+      &:last-child {
+        margin-left: 48px;
+      }
+    }
   }
 
   a {

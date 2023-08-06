@@ -7,22 +7,31 @@ a {
 
 body {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif, "Noto Sans TC", sans-serif;
+  font-family: "Roboto",  "Noto Sans TC", sans-serif;
 }
 
-h1 {
+@mixin h1 {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+@mixin h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+@mixin h3 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+@mixin h4 {
   font-size: 24px;
   font-weight: 700;
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 16px;
-  font-weight: 700;
+@mixin h5 {
+  font-size: 20px;
 }
 
 @mixin roboto-title {
