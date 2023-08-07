@@ -1,25 +1,5 @@
 // homepage global styles
 .root-homepage {
-  section {
-    padding: 40px 0;
-  }
-
-  h2 {
-    margin: 0 auto;
-
-    color: $dark;
-    @include h4;
-  }
-
-  @include pad {
-    section {
-      padding: 80px 0;
-    }
-
-    h2 {
-      @include h2;
-    }
-  }
 }
 
 p {
@@ -105,12 +85,6 @@ p {
 
 // category section
 .category {
-  text-align: center;
-
-  .row {
-    flex-direction: column;
-  }
-
   ul {
     margin: 0 auto;
 
@@ -134,6 +108,7 @@ p {
   }
 
   h3 {
+    text-align: center;
     @include roboto-title;
   }
 
@@ -199,15 +174,9 @@ p {
 }
 
 // collaboration section
-.comment {
-  h2 {
-    margin: 0 auto;
-
-    color: $dark;
-  }
-}
-
 .comment-list {
+  margin: 0 auto;
+
   @include pad {
     display: flex;
     flex-wrap: wrap;
@@ -272,7 +241,7 @@ p {
 
     @include desktop {
       margin-top: 48px;
-     }
+    }
   }
 
   .row {

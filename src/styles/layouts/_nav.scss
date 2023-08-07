@@ -4,7 +4,7 @@ nav {
   // 平板模式開始按鈕群組的 fluid 不作用
   @include pad {
     .container-fluid {
-      padding:initial;
+      padding: initial;
     }
 
     .row {
@@ -22,7 +22,7 @@ nav {
   a {
     display: block;
     height: 100%;
-  
+
     background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/logo-white.png");
     background-size: 80px;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@ nav {
 
   @include pad {
     flex-wrap: nowrap;
-  
+
     margin: initial;
     width: initial;
   }

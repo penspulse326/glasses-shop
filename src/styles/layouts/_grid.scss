@@ -22,11 +22,11 @@ $gutter: 24px;
   $gutter-totalWidth: $gutter * ($i - 1);
 
   .col-sm-#{$i} {
-    width: calc((100% - $gutter*3) / 4 * $i + $gutter-totalWidth);
+    width: calc((100% - $gutter * 3) / 4 * $i + $gutter-totalWidth);
   }
 }
 
-// 設定寬度到達 768px 開始為平板樣式
+// width >= 768px 開始為平板樣式
 @media (min-width: 768px) {
   .container {
     min-width: 376px;
@@ -35,14 +35,14 @@ $gutter: 24px;
 
   @for $i from 1 through 12 {
     $gutter-totalWidth: $gutter * ($i - 1);
-  
+
     .col-md-#{$i} {
-      width: calc((100% - $gutter*11) / 12 * $i + $gutter-totalWidth);
+      width: calc((100% - $gutter * 11) / 12 * $i + $gutter-totalWidth);
     }
   }
 }
 
-// 電腦樣式
+// width >= 1200px 開始為平板樣式
 @media (min-width: 1200px) {
   .container {
     min-width: 769px;
@@ -52,11 +52,9 @@ $gutter: 24px;
 
   @for $i from 1 through 12 {
     $gutter-totalWidth: $gutter * ($i - 1);
-  
+
     .col-lg-#{$i} {
-      width: calc((100% - $gutter*11) / 12 * $i + $gutter-totalWidth);
+      width: calc((100% - $gutter * 11) / 12 * $i + $gutter-totalWidth);
     }
   }
 }
-
-

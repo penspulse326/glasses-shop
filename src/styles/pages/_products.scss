@@ -1,0 +1,293 @@
+// header style
+.products-header {
+  text-align: center;
+
+  h2 {
+    padding: 16px 0;
+
+    font-weight: 500;
+  }
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 -15px;
+  width: 100vw;
+
+  cursor: pointer;
+
+  li {
+    flex: 1;
+
+    height: 56px;
+    border: 1px solid #dcdcdc;
+  }
+
+  li:first-child {
+    border-bottom: 8px solid $primary;
+  }
+
+  @include pad {
+    margin: 0 -51px;
+
+    h2 {
+      @include h4;
+    }
+
+    li {
+      height: 68px;
+    }
+  }
+
+  @include desktop {
+    margin: 0;
+    .container-fluid {
+      padding: initial;
+    }
+  }
+}
+
+.category-img-list {
+  display: flex;
+
+  width: 100%;
+
+  li {
+    flex: 1;
+    width: 50%;
+  }
+
+  img {
+    width: 100%;
+    max-height: 296px;
+
+    object-fit: cover;
+  }
+
+  @include pad {
+    img {
+      height: 296px;
+    }
+  }
+
+  @include desktop {
+    .category-img-1 {
+      content: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/product-header-1.png");
+    }
+    .category-img-2 {
+      content: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/product-header-2.png");
+    }
+    .category-img-3 {
+      content: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/product-header-3.png");
+    }
+    .category-img-4 {
+      content: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/product-header-4.png");
+    }
+  }
+}
+
+// product list
+.products-menu {
+  text-align: center;
+
+  h3 {
+    margin: 0 auto;
+
+    @include h4;
+  }
+
+  .products-title-en {
+    font-weight: 500;
+  }
+
+  .products-title-tw {
+    font-weight: 400;
+  }
+
+  @include pad {
+    .products-title-en {
+      font-size: 42px;
+    }
+
+    .products-title-tw {
+      font-size: 32px;
+    }
+  }
+}
+
+.products-menu-list {
+  margin: 24px auto 0 auto;
+
+  li {
+    margin-bottom: 24px;
+    margin-right: 0;
+  }
+
+  li:nth-child(n + 6):nth-child(-n + 12) {
+    display: none;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 168px;
+
+    object-fit: cover;
+  }
+
+  @include pad {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 32px;
+
+    li {
+      margin-bottom: 40px;
+      margin-right: 24px;
+    }
+
+    li:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    li:nth-child(n + 6):nth-child(-n + 10) {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    li {
+      margin-bottom: 80px;
+    }
+
+    li:nth-child(2n) {
+      margin-right: 24px;
+    }
+
+    li:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.sunglass-list {
+  img {
+    height: 224px;
+  }
+
+  @include pad {
+    li {
+      margin-bottom: 40px;
+      margin-right: 24px;
+    }
+
+    li:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    li:nth-child(n + 6):nth-child(-n + 10) {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    li:nth-child(2n) {
+      margin-right: 24px;
+    }
+
+    li:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.product-info {
+  @include h4;
+
+  display: flex;
+  justify-content: space-between;
+
+  .number {
+    font-weight: 400;
+  }
+
+  .price {
+    color: $primary;
+    font-weight: 500;
+  }
+}
+
+.product-color {
+  text-align: left;
+  span {
+    display: inline-block;
+
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+  }
+
+  .color-1 {
+    background-color: #5f3e2d;
+  }
+
+  .color-2 {
+    background-color: #b75929;
+  }
+}
+
+.pagenation {
+  display: flex;
+
+  margin: 40px auto 24px auto;
+  max-width: 348px;
+
+  cursor: pointer;
+
+  li {
+    flex: 1;
+
+    padding: 12px;
+    height: 45px;
+
+    border: 1px solid #555555;
+
+    text-align: center;
+
+    white-space: nowrap;
+    line-height: normal;
+  }
+
+  li:nth-child(2) {
+    background-color: black;
+    color: white;
+  }
+
+  li:nth-child(n + 2):nth-child(-n + 7) {
+    border-left: none;
+  }
+
+  li:hover {
+    background-color: #f2f2f2;
+    color: black;
+  }
+
+  @include pad {
+    margin-bottom: 0;
+
+    li {
+      padding: 12px 16px;
+      height: 48px;
+    }
+  }
+
+  @include desktop {
+    margin-top: 0;
+  }
+}

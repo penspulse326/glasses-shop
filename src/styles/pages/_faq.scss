@@ -1,0 +1,31 @@
+.faq {
+  font-family: "Noto Sans TC", sans-serif;
+
+  li {
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  h3 {
+    @include h5;
+
+    margin-bottom: 8px;
+
+    white-space: nowrap;
+  }
+
+  @include pad {
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.faq-title {
+  @include h4;
+
+  margin-bottom: 24px;
+}
