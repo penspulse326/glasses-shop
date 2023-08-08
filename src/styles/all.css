@@ -1104,20 +1104,20 @@ p {
   }
 }
 
-.branch-seletor-wrapper {
+.branch-selector-wrapper {
   display: flex;
   align-items: center;
   margin-bottom: 24px;
   width: 100%;
 }
 @media (min-width: 768px) {
-  .branch-seletor-wrapper {
+  .branch-selector-wrapper {
     margin-bottom: 40px;
     font-size: 24px;
   }
 }
 
-.branch-seletor {
+.branch-selector {
   flex: 1;
   margin-left: 8px;
   padding: 6px 12px;
@@ -1127,7 +1127,7 @@ p {
   border: 2px solid black;
 }
 @media (min-width: 768px) {
-  .branch-seletor {
+  .branch-selector {
     margin-left: 16px;
     padding: 0 12px;
     font-size: 18px;
