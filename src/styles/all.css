@@ -1124,10 +1124,12 @@ p {
   max-width: 304px;
   height: 38px;
   background-color: transparent;
+  border: 2px solid black;
 }
 @media (min-width: 768px) {
   .branch-seletor {
     margin-left: 16px;
+    padding: 0 12px;
     font-size: 18px;
   }
 }

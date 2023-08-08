@@ -42,8 +42,12 @@
 
   background-color: transparent;
 
+  border: 2px solid black;
+
   @include pad {
     margin-left: 16px;
+
+    padding: 0 12px;
     font-size: 18px;
   }
 }
