@@ -1124,7 +1124,7 @@ p {
   max-width: 304px;
   height: 38px;
   background-color: transparent;
-  border: 2px solid black;
+  border: 1px solid grey;
 }
 @media (min-width: 768px) {
   .branch-selector {
