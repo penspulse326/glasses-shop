@@ -1,27 +1,153 @@
-.faq {
-  font-family: "Noto Sans TC", sans-serif;
+.blog {
+  h2 {
+    color: black;
+    text-align: left;
+  }
 
-  li {
-    margin-bottom: 24px;
+  @include desktop {
+    padding-top: 96px;
+  }
+}
+
+.article-card {
+  margin-bottom: 24px;
+
+  img {
+    margin-bottom: 8px;
+    height: 100%;
   }
 
   h3 {
-    @include h5;
+    @include h4;
+    color: $dark;
+    font-weight: 400;
+  }
 
-    margin-bottom: 8px;
+  p {
+    display: none;
 
-    white-space: nowrap;
+    margin-top: 4px;
+
+    color: #555555;
   }
 
   @include pad {
-    li:last-child {
+    display: flex;
+    justify-content: space-between;
+
+    img {
       margin-bottom: 0;
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+    }
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 124px;
+    }
+
+    h3 {
+      font-size: 32px;
+    }
+
+    p {
+      margin-top: 16px;
+
+      font-size: 20px;
     }
   }
 }
 
-.faq-title {
-  @include h4;
+.article-info {
+  display: block;
 
-  margin-bottom: 24px;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-size: 20px;
+  }
+}
+
+.article-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: black;
+
+  span {
+    opacity: 0.7;
+  }
+
+  @include desktop {
+    font-size: 16px;
+  }
+}
+
+.article-link {
+  display: none;
+  color: $dark;
+
+  &:visited {
+    color: $dark;
+  }
+
+  @include desktop {
+    display: inline-block;
+    align-self: flex-end;
+
+    @include h3;
+  }
+}
+
+.blog-nav {
+  display: none;
+
+  height: 56px;
+
+  background-color: $dark;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    margin-right: 48px;
+  }
+
+  a {
+    color: white;
+    font-size: 20px;
+  }
+
+  span {
+    color: white;
+    font-size: 40px;
+  }
+
+  @include pad {
+    display: block;
+  }
 }

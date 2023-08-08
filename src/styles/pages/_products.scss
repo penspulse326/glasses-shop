@@ -29,11 +29,16 @@
     border-bottom: 8px solid $primary;
   }
 
+  a {
+    color: black;
+  }
+
   @include pad {
     margin: 0 -51px;
 
     h2 {
       @include h4;
+      font-weight: 500;
     }
 
     li {
@@ -84,6 +89,17 @@
     }
     .category-img-4 {
       content: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/product-header-4.png");
+    }
+  }
+}
+
+.product-2 {
+  .category-list {
+    li {
+      border: 1px solid #dcdcdc;
+    }
+    li:nth-child(2) {
+      border-bottom: 8px solid $primary;
     }
   }
 }
@@ -193,6 +209,10 @@
   }
 
   @include desktop {
+    li {
+      margin-bottom: 80px;
+    }
+
     li:nth-child(2n) {
       margin-right: 24px;
     }
