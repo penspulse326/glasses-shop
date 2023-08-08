@@ -35,7 +35,9 @@
     justify-content: space-between;
 
     img {
+      display: block;
       margin-bottom: 0;
+      max-height: 400px;
     }
 
     p {

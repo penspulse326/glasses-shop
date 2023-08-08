@@ -1288,7 +1288,9 @@ p {
     justify-content: space-between;
   }
   .article-card img {
+    display: block;
     margin-bottom: 0;
+    max-height: 400px;
   }
   .article-card p {
     display: -webkit-box;
