@@ -1463,6 +1463,12 @@ p {
   .article-content p:last-child {
     margin-bottom: 40px;
   }
+  .article-content h2 {
+    font-size: 48px;
+  }
+  .article-content h3 {
+    font-size: 24px;
+  }
 }
 
 .tag-cloud {
