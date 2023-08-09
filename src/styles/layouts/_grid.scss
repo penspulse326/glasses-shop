@@ -1,6 +1,7 @@
+// 固定每格間距
 $gutter: 24px;
 
-// 本網格從 mobile 為初版開始設計
+// 從 mobile 開板
 // 容器最大寬度減掉設計稿指定左右寬距 13px*2
 .container {
   margin: 0 auto;
@@ -13,11 +14,13 @@ $gutter: 24px;
   max-width: 100%;
 }
 
+// 自適應容器
 .row {
   display: flex;
   flex-wrap: wrap;
 }
 
+// 格線設定
 @for $i from 1 through 4 {
   $gutter-totalWidth: $gutter * ($i - 1);
 
@@ -26,7 +29,7 @@ $gutter: 24px;
   }
 }
 
-// width >= 768px 開始為平板樣式
+// 平板樣式
 @media (min-width: 768px) {
   .container {
     min-width: 376px;
@@ -42,7 +45,7 @@ $gutter: 24px;
   }
 }
 
-// width >= 1200px 開始為平板樣式
+// PC 樣式
 @media (min-width: 1200px) {
   .container {
     min-width: 769px;

@@ -143,6 +143,10 @@ img {
   height: auto;
 }
 
+p {
+  font-weight: 400;
+}
+
 .primary {
   color: #aa0601;
 }
@@ -537,9 +541,13 @@ footer hr {
   color: white;
 }
 
-p {
-  color: black;
-  font-weight: 400;
+.root-homepage h2 {
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .root-homepage h2 {
+    margin-bottom: 48px;
+  }
 }
 
 .homepage-header {
@@ -590,66 +598,51 @@ p {
 
 .intro {
   background-color: #fbf2f2;
-  color: #650300;
+}
+.intro h2 {
+  margin-bottom: 24px;
 }
 
 .intro-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-}
-.intro-list img {
-  width: 100px;
+  gap: 24px;
 }
 .intro-list li {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 1.5rem;
+}
+.intro-list img {
+  width: 100px;
 }
 .intro-list h3 {
-  margin-top: 1rem;
   font-size: 24px;
   font-weight: 700;
+  margin-top: 1rem;
+  color: #650300;
 }
 .intro-list p {
   margin-top: 0.5rem;
+  text-align: left;
 }
 
 .category ul {
-  margin: 0 auto;
-}
-@media (min-width: 1200px) {
-  .category ul {
-    display: flex;
-  }
-}
-.category li {
-  margin-top: 24px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 1200px) {
-  .category li {
-    margin-top: 48px;
-  }
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 .category img {
   display: block;
+  margin-bottom: 8px;
 }
 .category h3 {
-  text-align: center;
   color: #aa0601;
   font-size: 48px;
   font-style: italic;
   font-weight: 900;
-}
-@media (min-width: 768px) {
-  .category li:first-child {
-    margin-top: 48px;
-  }
+  text-align: center;
 }
 
 .co-branding {
@@ -660,73 +653,59 @@ p {
 .co-branding h2 {
   color: white;
 }
-
 .co-branding-list li {
   margin-top: 24px;
 }
-.co-branding-list a,
 .co-branding-list img {
   display: block;
+  width: 100%;
 }
 .co-branding-list h3 {
-  width: 100%;
-  background-color: white;
-  text-align: center;
   color: #aa0601;
   font-size: 48px;
   font-style: italic;
   font-weight: 900;
+  width: 100%;
+  background-color: white;
+  text-align: center;
 }
 @media (min-width: 768px) {
   .co-branding-list li:first-child {
     margin-top: 48px;
   }
   .co-branding-list img {
-    width: 100%;
     height: 240px;
     -o-object-fit: cover;
        object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
-  .co-branding-list {
-    display: flex;
-  }
   .co-branding-list li {
+    flex-grow: 1;
     margin-top: 48px;
-    width: 50%;
   }
   .co-branding-list h3 {
     padding: 8px 0;
   }
 }
 
-.comment-list {
-  margin: 0 auto;
+.comment h2 {
+  margin-bottom: 24px;
 }
 @media (min-width: 768px) {
-  .comment-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+  .comment h2 {
+    margin-bottom: 48px;
   }
 }
+
+.comment-list {
+  margin: 0 auto;
+  gap: 16px;
+}
 .comment-list li {
-  margin-top: 16px;
   border-radius: 4px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1607843137);
   overflow: hidden;
-}
-@media (min-width: 768px) {
-  .comment-list li {
-    margin-top: 24px;
-  }
-}
-@media (min-width: 1200px) {
-  .comment-list li {
-    margin-top: 48px;
-  }
 }
 .comment-list img {
   display: block;
@@ -735,21 +714,32 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.comment-list .comment-info {
+.comment-list p {
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .comment-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.comment-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
   min-height: 205px;
 }
-.comment-list .comment-info span {
+.comment-info span {
   font-family: "Noto Sans TC";
   font-weight: 500;
 }
-.comment-list p {
-  margin-top: 0.5rem;
-}
-.comment-list .comment-date {
+
+.comment-date {
   display: block;
   color: #707070;
   font-size: 14px;
@@ -845,9 +835,14 @@ p {
   flex: 1;
   height: 56px;
   border: 1px solid #dcdcdc;
+  transition: 0.3s;
 }
 .category-list li:first-child {
   border-bottom: 8px solid #aa0601;
+}
+.category-list li:hover {
+  border-bottom: 8px solid rgba(170, 6, 0, 0.5);
+  transition: 0.3s;
 }
 .category-list a {
   color: black;
@@ -954,6 +949,10 @@ p {
   height: 168px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: 0.3s;
+}
+.products-menu-list img:hover {
+  opacity: 0.5;
 }
 @media (min-width: 768px) {
   .products-menu-list {

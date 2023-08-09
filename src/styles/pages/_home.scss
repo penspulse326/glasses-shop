@@ -1,10 +1,14 @@
-// homepage global styles
+// homepage global
 .root-homepage {
-}
+  h2 {
+    margin-bottom: 24px;
+  }
 
-p {
-  color: black;
-  font-weight: 400;
+  @include pad {
+    h2 {
+      margin-bottom: 48px;
+    }
+  }
 }
 
 // header
@@ -55,67 +59,54 @@ p {
 // introduction section
 .intro {
   background-color: $secondary;
-  color: $dark;
+
+  h2 {
+    margin-bottom: 24px;
+  }
 }
 
 .intro-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 
-  img {
-    width: 100px;
-  }
+  gap: 24px;
+
   li {
     @include flex-center;
     flex-direction: column;
-
-    margin-top: 1.5rem;
+  }
+  img {
+    width: 100px;
   }
   h3 {
+    @include h4;
     margin-top: 1rem;
 
-    @include h4;
+    color: $dark;
   }
   p {
     margin-top: 0.5rem;
+    text-align: left;
   }
 }
 
 // category section
 .category {
   ul {
-    margin: 0 auto;
-
-    @include desktop {
-      display: flex;
-    }
-  }
-
-  li {
-    margin-top: 24px;
-    margin-left: auto;
-    margin-right: auto;
-
-    @include desktop {
-      margin-top: 48px;
-    }
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   img {
     display: block;
+
+    margin-bottom: 8px;
   }
 
   h3 {
-    text-align: center;
     @include roboto-title;
-  }
-
-  @include pad {
-    li:first-child {
-      margin-top: 48px;
-    }
+    text-align: center;
   }
 }
 
@@ -128,23 +119,30 @@ p {
   h2 {
     color: white;
   }
+
+  @include pad {
+    h2 {
+    }
+  }
 }
 
 .co-branding-list {
   li {
     margin-top: 24px;
   }
-  a,
   img {
     display: block;
+
+    width: 100%;
   }
   h3 {
+    @include roboto-title;
+
     width: 100%;
 
     background-color: white;
 
     text-align: center;
-    @include roboto-title;
   }
 
   @include pad {
@@ -152,7 +150,6 @@ p {
       margin-top: 48px;
     }
     img {
-      width: 100%;
       height: 240px;
 
       object-fit: cover;
@@ -160,11 +157,9 @@ p {
   }
 
   @include desktop {
-    display: flex;
-
     li {
+      flex-grow: 1;
       margin-top: 48px;
-      width: 50%;
     }
 
     h3 {
@@ -173,33 +168,31 @@ p {
   }
 }
 
-// collaboration section
+// comment section
+.comment {
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  @include pad {
+    h2 {
+      margin-bottom: 48px;
+    }
+  }
+}
+
 .comment-list {
   margin: 0 auto;
 
-  @include pad {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+  gap: 16px;
 
   li {
-    margin-top: 16px;
-
     border-radius: 4px;
     box-shadow: 0px 2px 6px #00000029;
 
     overflow: hidden;
-
-    @include pad {
-      margin-top: 24px;
-    }
-
-    @include desktop {
-      margin-top: 48px;
-    }
   }
+
   img {
     display: block;
 
@@ -208,28 +201,40 @@ p {
 
     object-fit: cover;
   }
-  .comment-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-    padding: 16px;
-    min-height: 205px;
-
-    span {
-      font-family: "Noto Sans TC";
-      font-weight: 500;
-    }
-  }
   p {
     margin-top: 0.5rem;
   }
-  .comment-date {
-    display: block;
 
-    color: #707070;
-    font-size: 14px;
+  @include pad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 24px;
   }
+}
+
+.comment-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 16px;
+  min-height: 205px;
+
+  span {
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+  }
+}
+
+.comment-date {
+  display: block;
+
+  color: #707070;
+  font-size: 14px;
 }
 
 // response
