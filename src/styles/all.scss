@@ -1,12 +1,19 @@
+// css reset
 @import "base/reset";
-@import "base/global";
+
+// global style setting
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "base/typography";
 @import "layouts/grid";
 @import "components/utils";
+@import "base/global";
+
+// layouts
 @import "layouts/nav";
 @import "layouts/footer";
+
+// pages
 @import "pages/home";
 @import "pages/products";
 @import "pages/branch";
