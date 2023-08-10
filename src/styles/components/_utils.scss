@@ -1,8 +1,17 @@
 .btn {
   background-color: $primary;
+
   color: white;
   line-height: normal;
   border: none;
+
+  transition: 0.3s;
+
+  &:hover {
+    transform: scaleX(1.2);
+    transform-origin: bottom left;
+    background-color: $dark;
+  }
 }
 
 .btn-sm {
@@ -19,10 +28,40 @@
   line-height: 1.5;
 
   transition: 0.3s;
+}
 
-  &:hover {
-    transform: scaleX(0.95);
-    background-color: $dark;
+.pagenation {
+  margin: 64px auto 0 auto;
+  max-width: 348px;
+
+  td {
+    padding: 12px;
+    height: 45px;
+
+    border: 1px solid #555555;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #f2f2f2;
+      color: black;
+    }
+  }
+
+  td:nth-child(2) {
+    background-color: black;
+    color: white;
+  }
+
+  @include pad {
+    margin-top: 80px;
+
+    td {
+      padding: 12px 16px;
+      height: 48px;
+    }
   }
 }
 

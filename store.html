@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/all.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <link rel="stylesheet" href="./src/styles/all.css" />
     <title>W3-Glasses Shop</title>
   </head>
   <body>
@@ -17,7 +17,7 @@
           <h1 class="logo">
             <a href="./index.html">Rocket Glasses</a>
           </h1>
-          <ul class="menu-group">
+          <ul class="nav-group">
             <li>
               <a href="./products.html">系列鏡框</a>
             </li>
@@ -29,59 +29,56 @@
       </div>
     </nav>
     <div class="root-branch">
-      <section class="branch sub">
+      <section class="branch">
         <div class="container">
-          <div class="row">
-            <h2 class="page-title">門市據點</h2>
-            <div class="branch-selector-wrapper">
-              選擇分店
-              <select class="branch-selector" name="branch-location" id="">
-                <option value="">台北市</option>
-                <option value="">台中市</option>
-                <option value="">高雄市</option>
-              </select>
+          <h2 class="page-title">門市據點</h2>
+          <div class="branch-selector-wrapper">
+            選擇分店
+            <select class="branch-selector" name="branch-location" id="">
+              <option value="">台北市</option>
+              <option value="">台中市</option>
+              <option value="">高雄市</option>
+            </select>
+          </div>
+          <div class="row store-wrapper">
+            <div class="store-card col-sm-4 col-lg-5">
+              <img
+                class="col-sm-4 col-md-6"
+                src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/store-2.png"
+                alt="store-2"
+              />
+              <div class="store-info-wrapper col-sm-4 col-md-6">
+                <h3>台北綠園店</h3>
+                <ul class="branch-info">
+                  <li>
+                    <span class="material-symbols-outlined branch-icon">
+                      call </span
+                    ><span>電話：(02)000-2345</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined branch-icon">
+                      schedule </span
+                    ><span>營業時間：10:00-21:00</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined branch-icon"
+                      >location_on</span
+                    >
+                    <span>地址：台北市中正區復興南路 132-1 號</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="branch-wrapper">
-              <div class="branch-list-card col-sm-4 col-lg-5">
-                <div class="branch-view col-md-6">
-                  <img
-                    src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/store-2.png"
-                    alt="store-2"
-                  />
-                </div>
-                <div class="branch-info-wrapper col-md-6">
-                  <h3>台北綠園店</h3>
-                  <ul class="branch-info">
-                    <li>
-                      <span class="material-symbols-outlined branch-icon">
-                        call </span
-                      ><span>電話：(02)000-2345</span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined branch-icon">
-                        schedule </span
-                      ><span>營業時間：10:00-21:00</span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined branch-icon"
-                        >location_on</span
-                      >
-                      <span>地址：台北市中正區復興南路 132-1 號</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="branch-map col-sm-4 col-lg-7">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.2371839262057!2d121.5242682496337!3d25.05190627205108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a966031f5799%3A0x35822d693796d1a1!2z5ZCJ5pif5riv5byP6aOy6Iy2!5e0!3m2!1szh-TW!2stw!4v1691402357319!5m2!1szh-TW!2stw"
-                  width="600"
-                  height="450"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+            <div class="store-map col-sm-4 col-lg-7">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.2371839262057!2d121.5242682496337!3d25.05190627205108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a966031f5799%3A0x35822d693796d1a1!2z5ZCJ5pif5riv5byP6aOy6Iy2!5e0!3m2!1szh-TW!2stw!4v1691402357319!5m2!1szh-TW!2stw"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -89,46 +86,15 @@
     </div>
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="contact col-sm-4">
-            <div>
-              <ul class="footer-menu">
-                <li><a href="./index.html">首頁</a></li>
-                <li><a href="./products.html">系列鏡框</a></li>
-                <li><a href="./branch.html">門市據點</a></li>
-                <li><a href="./blog.html">部落格</a></li>
-                <li><a href="./faq.html">常見問題</a></li>
-              </ul>
-              <ul class="contact-info">
-                <li>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="48"
-                    viewBox="0 -960 960 960"
-                    width="48"
-                    stroke="white"
-                  >
-                    <path
-                      d="M795-120q-116 0-236.5-56T335-335Q232-438 176-558.5T120-795q0-19.286 12.857-32.143T165-840h140q14 0 24 10t14 25l26.929 125.641Q372-665 369.5-653.5q-2.5 11.5-10.729 19.726L259-533q26 44 55 82t64 72q37 38 78 69.5t86 55.5l95-98q10-11 23.151-15T686-369l119 26q15 4 25 16.044T840-300v135q0 19.286-12.857 32.143T795-120ZM229-588l81-82-23-110H180q2 42 13.5 88.5T229-588Zm369 363q41 19 89 31t93 14v-107l-103-21-79 83ZM229-588Zm369 363Z"
-                    />
-                  </svg>
-                  <span>0800-000-000</span>
-                </li>
-                <li>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="48"
-                    viewBox="0 -960 960 960"
-                    width="48"
-                  >
-                    <path
-                      d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140-685v465h680v-465L480-462Zm0-60 336-218H145l335 218ZM140-685v-55 520-465Z"
-                    />
-                  </svg>
-                  <span>glasses@business.com</span>
-                </li>
-              </ul>
-            </div>
+        <div class="contact">
+          <div>
+            <ul class="footer-menu">
+              <li><a href="./index.html">首頁</a></li>
+              <li><a href="./products.html">系列鏡框</a></li>
+              <li><a href="./branch.html">門市據點</a></li>
+              <li><a href="./blog.html">部落格</a></li>
+              <li><a href="./faq.html">常見問題</a></li>
+            </ul>
             <ul class="contact-sns">
               <li>
                 <a href="#"
@@ -153,14 +119,22 @@
               </li>
             </ul>
           </div>
-          <hr class="col-sm-4" />
-          <div class="term col-md-12">
-            <span>Copyright © 2020 Glasses.All rights reserved.</span>
-            <ul>
-              <li><a href="#">隱私權政策</a></li>
-              <li><a href="#">服務條款</a></li>
-            </ul>
-          </div>
+          <ul class="contact-info">
+            <li>
+              <div class="material-symbols-outlined">call</div>
+              <span>0800-000-000</span>
+            </li>
+            <li>
+              <div class="material-symbols-outlined">mail</div>
+              <span>glasses@business.com</span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="term">
+          <span>Copyright © 2020 Glasses.All rights reserved.</span>
+          <a href="#">隱私權政策</a>
+          <a href="#">服務條款</a>
         </div>
       </div>
     </footer>

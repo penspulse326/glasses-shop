@@ -1,16 +1,8 @@
 .branch {
-  font-weight: 400;
   h2 {
     text-align: left;
 
     color: black;
-  }
-  h3 {
-    padding: 8px 24px;
-    border: 1px solid #00000020;
-
-    @include h4;
-    font-weight: 400;
   }
 
   @include desktop {
@@ -53,6 +45,25 @@
 }
 
 .branch-list {
+  gap: 24px;
+
+  img {
+    display: block;
+
+    min-height: 224px;
+
+    object-fit: cover;
+  }
+
+  h3 {
+    @include h4;
+
+    padding: 8px 24px;
+    border: 1px solid #00000020;
+
+    font-weight: 400;
+  }
+
   a {
     display: block;
 
@@ -63,106 +74,118 @@
     color: white;
     font-size: 19px;
     text-align: center;
-  }
 
-  @include pad {
-    display: flex;
-    flex-wrap: wrap;
+    transition: 0.3s;
 
-    .branch-list-card {
-      margin-right: 24px;
-    }
-
-    .branch-list-card:nth-child(2n) {
-      margin-right: 0;
-    }
-
-    .branch-list-card:last-child {
-      margin-bottom: 0;
+    &:hover {
+      background-color: grey;
     }
   }
 
   @include desktop {
-    .branch-list-card:nth-child(2n) {
-      margin-right: 24px;
-    }
-
-    .branch-list-card:nth-child(3n) {
-      margin-right: 0;
-    }
-  }
-}
-
-.branch-list-card {
-  margin-bottom: 24px;
-
-  @include desktop {
-    margin-bottom: 48px;
-  }
-}
-
-.branch-view {
-  display: block;
-
-  img {
-    display: block;
-    width: 100%;
-    min-height: 224px;
-
-    object-fit: cover;
+    gap: 48px 24px;
   }
 }
 
 .branch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
   padding: 16px 24px;
+
   border: 1px solid #00000020;
 
   li {
     display: flex;
-
-    margin-bottom: 8px;
+    align-items: center;
 
     font-size: 20px;
   }
 
   li:last-child {
-    margin-bottom: 0;
+    align-items: flex-start;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      .hidden {
+        width: 0;
+        overflow: hidden;
+      }
+    }
   }
 
   .branch-icon {
     margin-right: 8px;
   }
 }
-// sub
-.sub {
-  .branch-list-card {
-    @include pad {
-      display: flex;
-      justify-content: space-between;
-    }
 
-    @include desktop {
-      flex-direction: column;
-
-      margin-bottom: 0;
-
-      .branch-view {
-        width: 100%;
-      }
-    }
-  }
-}
-
-.branch-wrapper {
+// store page
+.store-wrapper {
   @include desktop {
-    display: flex;
     justify-content: space-between;
-
-    width: 100%;
+    gap: 24px;
   }
 }
 
-.branch-map {
+.store-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 24px;
+
+  img {
+    display: block;
+
+    height: 224px;
+
+    object-fit: cover;
+  }
+
+  @include pad {
+    gap: 24px;
+
+    img,
+    div {
+      flex-grow: 1;
+    }
+  }
+
+  @include desktop {
+    flex-direction: column;
+    gap: 0;
+
+    margin-bottom: 0;
+
+    img,
+    div {
+      width: 100%;
+    }
+  }
+}
+
+.store-info-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    @include h4;
+
+    padding: 8px 24px;
+    font-weight: 400;
+
+    border: 1px solid #00000020;
+  }
+
+  ul {
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+}
+
+.store-map {
   margin-bottom: 24px;
 
   iframe {
@@ -175,21 +198,5 @@
     iframe {
       height: 100%;
     }
-  }
-}
-
-.branch-info-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  @include desktop {
-    width: 100%;
-  }
-
-  .branch-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex: 1;
   }
 }

@@ -1,10 +1,6 @@
 .faq {
   font-family: "Noto Sans TC", sans-serif;
 
-  li {
-    margin-bottom: 24px;
-  }
-
   h2 {
     color: black;
     text-align: left;
@@ -18,10 +14,11 @@
     white-space: nowrap;
   }
 
-  @include pad {
-    li:last-child {
-      margin-bottom: 0;
-    }
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
   }
 
   @include desktop {

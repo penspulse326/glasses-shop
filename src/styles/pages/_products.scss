@@ -16,24 +16,22 @@
   margin: 0 -15px;
   width: 100vw;
 
-  cursor: pointer;
-
   li {
-    flex: 1;
+    flex-grow: 1;
+    flex-basis: 0;
 
     height: 56px;
     border: 1px solid #dcdcdc;
 
     transition: 0.3s;
+
+    &:hover {
+      border-bottom: 8px solid rgba(170, 6, 0, 0.5);
+    }
   }
 
   li:first-child {
     border-bottom: 8px solid $primary;
-  }
-
-  li:hover {
-    border-bottom: 8px solid rgba(170, 6, 0, 0.5);
-    transition: 0.3s;
   }
 
   a {
@@ -54,7 +52,6 @@
   }
 
   @include desktop {
-    margin: 0;
     .container-fluid {
       padding: initial;
     }
@@ -67,11 +64,12 @@
   width: 100%;
 
   li {
-    flex: 1;
     width: 50%;
   }
 
   img {
+    display: block;
+
     width: 100%;
     max-height: 296px;
 
@@ -100,6 +98,7 @@
   }
 }
 
+// list style change for product-2
 .product-2 {
   .category-list {
     li {
@@ -126,6 +125,8 @@
   }
 
   .products-title-tw {
+    margin-bottom: 24px;
+
     font-weight: 400;
   }
 
@@ -135,18 +136,15 @@
     }
 
     .products-title-tw {
+      margin-bottom: 32px;
+
       font-size: 32px;
     }
   }
 }
 
 .products-menu-list {
-  margin: 24px auto 0 auto;
-
-  li {
-    margin-bottom: 24px;
-    margin-right: 0;
-  }
+  gap: 24px;
 
   li:nth-child(n + 6):nth-child(-n + 12) {
     display: none;
@@ -154,32 +152,21 @@
 
   img {
     display: block;
+
     width: 100%;
     height: 168px;
 
     object-fit: cover;
 
     transition: 0.3s;
-  }
 
-  img:hover {
-    opacity: 0.5;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   @include pad {
-    display: flex;
-    flex-wrap: wrap;
-
-    margin-top: 32px;
-
-    li {
-      margin-bottom: 40px;
-      margin-right: 24px;
-    }
-
-    li:nth-child(2n) {
-      margin-right: 0;
-    }
+    gap: 40px 24px;
 
     li:nth-child(n + 6):nth-child(-n + 10) {
       display: block;
@@ -187,52 +174,13 @@
   }
 
   @include desktop {
-    li {
-      margin-bottom: 80px;
-    }
-
-    li:nth-child(2n) {
-      margin-right: 24px;
-    }
-
-    li:nth-child(4n) {
-      margin-right: 0;
-    }
+    gap: 80px 24px;
   }
 }
 
-.sunglass-list {
+.sunglass {
   img {
     height: 224px;
-  }
-
-  @include pad {
-    li {
-      margin-bottom: 40px;
-      margin-right: 24px;
-    }
-
-    li:nth-child(2n) {
-      margin-right: 0;
-    }
-
-    li:nth-child(n + 6):nth-child(-n + 10) {
-      display: block;
-    }
-  }
-
-  @include desktop {
-    li {
-      margin-bottom: 80px;
-    }
-
-    li:nth-child(2n) {
-      margin-right: 24px;
-    }
-
-    li:nth-child(3n) {
-      margin-right: 0;
-    }
   }
 }
 
@@ -242,18 +190,20 @@
   display: flex;
   justify-content: space-between;
 
-  .number {
+  span:first-child {
     font-weight: 400;
   }
 
-  .price {
+  span:last-child {
     color: $primary;
     font-weight: 500;
   }
 }
 
 .product-color {
-  text-align: left;
+  display: flex;
+  align-items: center;
+
   span {
     display: inline-block;
 
@@ -264,63 +214,13 @@
     border-radius: 4px;
 
     cursor: pointer;
-  }
 
-  .color-1 {
-    background-color: #5f3e2d;
-  }
-
-  .color-2 {
-    background-color: #b75929;
-  }
-}
-
-.pagenation {
-  display: flex;
-
-  margin: 40px auto 24px auto;
-  max-width: 348px;
-
-  cursor: pointer;
-
-  li {
-    flex: 1;
-
-    padding: 12px;
-    height: 45px;
-
-    border: 1px solid #555555;
-
-    text-align: center;
-
-    white-space: nowrap;
-    line-height: normal;
-  }
-
-  li:nth-child(2) {
-    background-color: black;
-    color: white;
-  }
-
-  li:nth-child(n + 2):nth-child(-n + 7) {
-    border-left: none;
-  }
-
-  li:hover {
-    background-color: #f2f2f2;
-    color: black;
-  }
-
-  @include pad {
-    margin-bottom: 0;
-
-    li {
-      padding: 12px 16px;
-      height: 48px;
+    &:first-child {
+      background-color: #5f3e2d;
     }
-  }
 
-  @include desktop {
-    margin-top: 0;
+    &:last-child {
+      background-color: #b75929;
+    }
   }
 }

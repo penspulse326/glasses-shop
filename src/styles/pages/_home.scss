@@ -24,6 +24,10 @@
     align-items: flex-end;
   }
 
+  h2 {
+    margin-bottom: 4px;
+  }
+
   @include pad {
     padding: 296px 0;
   }
@@ -98,6 +102,18 @@
     gap: 24px;
   }
 
+  li {
+    transition: 0.3s;
+
+    &:hover {
+      -webkit-filter: sepia(1);
+
+      h3 {
+        color: grey;
+      }
+    }
+  }
+
   img {
     display: block;
 
@@ -107,6 +123,14 @@
   h3 {
     @include roboto-title;
     text-align: center;
+
+    transition: 0.3s;
+  }
+
+  @include desktop {
+    ul {
+      flex-direction: row;
+    }
   }
 }
 
@@ -119,17 +143,11 @@
   h2 {
     color: white;
   }
-
-  @include pad {
-    h2 {
-    }
-  }
 }
 
 .co-branding-list {
-  li {
-    margin-top: 24px;
-  }
+  gap: 24px;
+
   img {
     display: block;
 
@@ -138,28 +156,23 @@
   h3 {
     @include roboto-title;
 
-    width: 100%;
-
     background-color: white;
 
     text-align: center;
   }
 
   @include pad {
-    li:first-child {
-      margin-top: 48px;
-    }
     img {
       height: 240px;
 
       object-fit: cover;
     }
   }
-
   @include desktop {
+    gap: 0;
+
     li {
       flex-grow: 1;
-      margin-top: 48px;
     }
 
     h3 {
@@ -169,21 +182,7 @@
 }
 
 // comment section
-.comment {
-  h2 {
-    margin-bottom: 24px;
-  }
-
-  @include pad {
-    h2 {
-      margin-bottom: 48px;
-    }
-  }
-}
-
 .comment-list {
-  margin: 0 auto;
-
   gap: 16px;
 
   li {
@@ -203,15 +202,10 @@
   }
 
   p {
-    margin-top: 0.5rem;
+    margin-top: 8px;
   }
 
   @include pad {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-
     gap: 24px;
   }
 }
@@ -219,7 +213,6 @@
 .comment-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   padding: 16px;
   min-height: 205px;
@@ -228,11 +221,13 @@
     font-family: "Noto Sans TC";
     font-weight: 500;
   }
+
+  p {
+    flex-grow: 1;
+  }
 }
 
 .comment-date {
-  display: block;
-
   color: #707070;
   font-size: 14px;
 }
@@ -241,17 +236,23 @@
 .response {
   background-color: $secondary;
 
-  p {
-    margin-top: 24px;
-
-    @include desktop {
-      margin-top: 48px;
-    }
-  }
-
   .row {
     flex-direction: column;
     align-items: center;
+  }
+
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  p {
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    h2 {
+      margin-bottom: 48px;
+    }
   }
 }
 
@@ -259,19 +260,25 @@
   margin-top: 24px;
 
   ul {
-    @include pad {
-      margin-left: auto;
-      margin-right: auto;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    margin: 0 auto;
   }
 
   li {
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
+
+    width: 100%;
+
+    div {
+      margin-bottom: 8px;
+    }
 
     input {
-      margin-top: 8px;
       padding: 6px 12px;
 
       background-color: transparent;
@@ -283,26 +290,16 @@
 
   li:nth-last-child(1) {
     flex-direction: row;
-    align-items: flex-start;
-
-    div {
-      padding: 2px;
-    }
-    input {
-      margin: 0;
-      width: 16px;
-      height: 16px;
-    }
+    align-items: center;
 
     span {
-      margin-left: 4px;
+      margin-left: 8px;
     }
   }
 
   textarea {
     resize: none;
 
-    margin-top: 8px;
     height: 136px;
 
     background: transparent;
@@ -319,4 +316,41 @@
       margin-right: auto;
     }
   }
+}
+
+// custom checkbox style
+.custom-checkbox-label {
+  width: 20px;
+  height: 20px;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input:checked ~ .checkbox {
+    background-color: black;
+
+    &::after {
+      content: "\2714"; /* Unicode 打勾字符 */
+      font-size: 16px;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.checkbox {
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 3px;
+
+  cursor: pointer;
 }

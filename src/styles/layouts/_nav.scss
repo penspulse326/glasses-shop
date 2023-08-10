@@ -21,6 +21,7 @@ nav {
 
   a {
     display: block;
+
     height: 100%;
 
     background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/logo-white.png");
@@ -35,19 +36,12 @@ nav {
   }
 }
 
-.menu-group {
+.nav-group {
   display: flex;
   flex-wrap: wrap;
 
   margin: 0 -15px;
   width: 100vw;
-
-  @include pad {
-    flex-wrap: nowrap;
-
-    margin: initial;
-    width: initial;
-  }
 
   li {
     @include flex-center;
@@ -57,15 +51,7 @@ nav {
 
     border: 1px solid white;
 
-    @include pad {
-      margin-left: 64px;
-      padding: initial;
-      width: initial;
-
-      border: none;
-
-      font-size: 20px;
-    }
+    transition: 0.3s;
   }
 
   a {
@@ -74,5 +60,26 @@ nav {
     color: white;
     text-align: center;
     line-height: normal;
+  }
+
+  @include pad {
+    flex-wrap: nowrap;
+    gap: 64px;
+
+    margin: initial;
+    width: initial;
+
+    li {
+      padding: initial;
+      width: initial;
+
+      border: none;
+
+      font-size: 20px;
+    }
+
+    li:hover {
+      transform: scale(1.2);
+    }
   }
 }

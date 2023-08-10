@@ -2,16 +2,18 @@ footer {
   padding: 24px 0;
 
   background-color: $primary;
+
   color: white;
 
   hr {
     margin: 24px 0;
-    border: none;
 
-    border-top: 1px solid white;
+    border-top: 0px solid white;
 
     @include pad {
       margin: 32px 0;
+
+      border-top: 1px solid white;
     }
   }
 
@@ -20,66 +22,87 @@ footer {
   }
 }
 
+.contact {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+  }
+
+  @include pad {
+    flex-direction: column;
+  }
+}
+
 .footer-menu {
   display: none;
 
+  li {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
   a {
-    display: block;
-
-    width: 100%;
-
     color: white;
   }
 
   @include pad {
     display: flex;
-
-    margin-top: 16px;
-    margin-bottom: 32px;
-
-    li {
-      margin-right: 48px;
-    }
-
-    li:nth-last-child(1) {
-      margin-right: 0;
-    }
+    gap: 48px;
   }
 }
 
-.contact {
+.contact-sns {
   display: flex;
-  justify-content: space-between;
+  gap: 8px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include pad {
+    gap: 16px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
 .contact-info {
-  svg {
-    margin-right: 8px;
-    width: 24px;
-    height: 24px;
-
-    fill: white;
-
-    @include pad {
-      margin-right: 16px;
-      width: 48px;
-      height: 48px;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   li {
     display: flex;
     align-items: center;
-
-    font-weight: 400;
   }
 
-  li:nth-last-child(1) {
-    margin-top: 8px;
+  div {
+    margin-right: 8px;
+    margin-bottom: 0;
+
+    font-size: 24px;
   }
 
-  span {
-    @include pad {
+  @include pad {
+    div {
+      margin-right: 16px;
+      font-size: 48px;
+    }
+    span {
       @include h3;
       font-family: "Noto Sans TC", sans-serif;
       font-weight: 400;
@@ -87,61 +110,23 @@ footer {
   }
 }
 
-.contact-sns {
-  display: flex;
-
-  li {
-    margin-left: 8px;
-
-    font-weight: 400;
-
-    @include pad {
-      margin-top: 8px;
-      margin-left: 16px;
-    }
-  }
-
-  img {
-    width: 24px;
-    height: 24px;
-
-    @include pad {
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
-
 .term {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+
+  a {
+    color: white;
+    font-size: 14px;
+  }
 
   @include pad {
     flex-direction: row;
     justify-content: space-between;
-  }
+    gap: 48px;
 
-  ul {
-    display: flex;
-    flex-direction: column;
-
-    @include pad {
-      flex-direction: row;
+    span {
+      flex-grow: 1;
     }
-  }
-
-  li {
-    @include pad {
-      font-size: 14px;
-
-      &:last-child {
-        margin-left: 48px;
-      }
-    }
-  }
-
-  a {
-    margin-top: 8px;
-    color: white;
   }
 }

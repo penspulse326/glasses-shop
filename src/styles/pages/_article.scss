@@ -8,7 +8,6 @@
 
   @include desktop {
     padding-top: 24px;
-    margin-top: 0;
   }
 }
 
@@ -35,12 +34,9 @@
 
 .article-tag-list {
   display: flex;
+  gap: 16px;
 
   margin-bottom: 8px;
-
-  li {
-    margin-right: 16px;
-  }
 
   a {
     color: $primary;
@@ -65,6 +61,8 @@
     margin-bottom: 16px;
   }
   img {
+    display: block;
+
     margin-bottom: 8px;
   }
   p {
@@ -78,16 +76,15 @@
   }
 
   @include pad {
-    p:last-child {
-      margin-bottom: 40px;
-    }
-
     h2 {
       font-size: 48px;
     }
 
     h3 {
       font-size: 24px;
+    }
+    p:last-child {
+      margin-bottom: 40px;
     }
   }
 }
@@ -101,23 +98,32 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  li {
-    margin-right: 16px;
+    gap: 0 16px;
   }
 
   a {
     color: $primary;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   @include pad {
     display: block;
   }
+
+  @include desktop {
+    ul {
+      gap: 8px 24px;
+    }
+
+    li {
+      @include h4;
+    }
+  }
 }
+
 .tag-title {
   display: flex;
+  align-items: center;
 
   margin-bottom: 8px;
 
@@ -127,6 +133,16 @@
     font-size: 24px;
     font-weight: bold;
   }
+
+  @include desktop {
+    font-size: 32px;
+
+    span {
+      margin-right: 8px;
+
+      font-size: 48px;
+    }
+  }
 }
 
 .article-feature {
@@ -134,7 +150,7 @@
 
   hr {
     margin: 0;
-    border: 1.5px solid #00000029;
+    border-top: 1px solid #0a0a0a;
   }
 
   @include pad {
@@ -168,22 +184,20 @@
   line-height: normal;
 
   a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
     color: black;
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   span {
     vertical-align: middle;
-  }
-
-  li:first-child {
-    span {
-      margin-right: 8px;
-    }
-  }
-
-  li:last-child {
-    span {
-      margin-left: 8px;
-    }
   }
 }
