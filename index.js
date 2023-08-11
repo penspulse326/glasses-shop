@@ -6,6 +6,17 @@ const flash = require("connect-flash");
 const comment = require("./models/comment");
 
 // mongoDB connect
+mongoose
+  .connect(process.env.DB_CONNECT, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("MongoDB Atlas is connected.");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // middleware
 app.set("view engine", "ejs");
