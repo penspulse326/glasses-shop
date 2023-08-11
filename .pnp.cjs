@@ -29,7 +29,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["connect-flash", "npm:0.1.1"],\
-            ["dotenv", "npm:16.3.1"],\
             ["ejs", "npm:3.1.9"],\
             ["express", "npm:4.18.2"],\
             ["express-session", "npm:1.17.3"],\
@@ -616,15 +615,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/destroy-npm-1.2.0-6a511802e2-0acb300b74.zip/node_modules/destroy/",\
           "packageDependencies": [\
             ["destroy", "npm:1.2.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["dotenv", [\
-        ["npm:16.3.1", {\
-          "packageLocation": "./.yarn/cache/dotenv-npm-16.3.1-e6d380a398-15d75e7279.zip/node_modules/dotenv/",\
-          "packageDependencies": [\
-            ["dotenv", "npm:16.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2363,7 +2353,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["w3", "workspace:."],\
             ["connect-flash", "npm:0.1.1"],\
-            ["dotenv", "npm:16.3.1"],\
             ["ejs", "npm:3.1.9"],\
             ["express", "npm:4.18.2"],\
             ["express-session", "npm:1.17.3"],\
