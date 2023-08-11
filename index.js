@@ -3,21 +3,9 @@ const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
-require("dotenv").config();
 const comment = require("./models/comment");
 
 // mongoDB connect
-mongoose
-  .connect(process.env.DB_CONNECT, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("MongoDB Atlas is connected.");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 // middleware
 app.set("view engine", "ejs");
