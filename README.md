@@ -1,1 +1,3 @@
-# w3-glasses
+# glasses-shop
+web layout traning from rocket bookcamp.
+
